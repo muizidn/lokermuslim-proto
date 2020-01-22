@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "user.proto";
 
-package proto;
+package loker;
 
 service Auth {
   rpc Login(LoginRequest) returns (LoginResponse) {}
