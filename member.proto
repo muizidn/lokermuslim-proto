@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package loker;
+
+message Member {
+  int32 id = 1;
+  int32 id_user = 2;
+  int32 id_pekerjaan = 3;
+  string cover_profile = 4;
+  string nama_lengkap = 5;
+  string no_ktp = 6;
+  string deskripsi_member = 7;
+  string kota_member = 8;
+  string provinsi_member = 9;
+  string no_hp_member = 10;
+  string no_wa = 11;
+  string email_member = 12;
+  string alamat = 13;
+  string scan_ktp = 14;
+  string skills = 15;
+  string web_personal = 16;
+  int32 usia = 17;
+  bool sudahBekerja = 18;
+}

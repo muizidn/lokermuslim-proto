@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "user.proto";
+
+package loker;
+
+service Auth {
+  rpc Login(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+  rpc Register(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string token = 1;
+  User req = 2;
+}

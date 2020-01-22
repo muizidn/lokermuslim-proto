@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package loker;
+
+service UserService {
+  rpc Get(UserRequestId) returns (User) {}
+}
+
+message User {
+  int32 id = 1;
+  string username = 2;
+  string foto = 3;
+  google.protobuf.Timestamp tgl_dibuat = 4;
+  Level level = 5;
+  bool verifikasi = 6;
+}
+
+message UserRequestId {
+  string id = 1;
+}
+
+enum Level {
+  Level_UNKNOWN = 0;
+  ADMIN = 1;
+  MEMBER = 2;
+  PERUSAHAAN = 3;
+}
