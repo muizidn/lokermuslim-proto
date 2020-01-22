@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-import "google/protobuf/empty.proto";
 import "user.proto";
 
-package loker;
+package proto;
 
 service Auth {
-  rpc Login(google.protobuf.Empty) returns (google.protobuf.Empty) {}
-  rpc Register(google.protobuf.Empty) returns (google.protobuf.Empty) {}
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+  rpc RegisterPekerja(PekerjaRegisterRequest) returns (RegisterResponse) {}
+  rpc RegisterPerusahaan(PerusahaanRegisterRequest) returns (RegisterResponse) {}
 }
 
 message LoginRequest {
@@ -17,5 +17,32 @@ message LoginRequest {
 
 message LoginResponse {
   string token = 1;
-  User req = 2;
+  User user = 2;
+}
+
+message RegisterResponse {
+  string message = 1;
+}
+
+message PekerjaRegisterRequest {
+  string fullname = 1;
+  string email = 2;
+  string provinsi = 3;
+  string kabupatenKota = 4;
+  string kodePos = 5;
+  string pekerjaan = 6;
+  string username = 7;
+  string password = 8;
+}
+
+message PerusahaanRegisterRequest {
+  string fullname = 1;
+  string email = 2;
+  string provinsi = 3;
+  string kabupatenKota = 4;
+  string namaPerusahaan = 5;
+  string bidangIndustri = 6;
+  string alamatPerusahaan = 7;
+  string username = 8;
+  string password = 9;
 }

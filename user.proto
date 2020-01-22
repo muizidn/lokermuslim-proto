@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
-package loker;
+package proto;
 
 service UserService {
   rpc Get(UserRequestId) returns (User) {}
