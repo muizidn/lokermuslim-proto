@@ -4,10 +4,6 @@ import "google/protobuf/timestamp.proto";
 
 package loker;
 
-service UserService {
-  rpc Get(UserRequestId) returns (User) {}
-}
-
 message User {
   int32 id = 1;
   string username = 2;
