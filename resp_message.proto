@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package loker;
+
+message RespMessage {
+  Code code = 1;
+  string message = 2;
+}
+
+enum Code {
+  Code_UNKNOWN = 0;
+  UserCreated = 1;
+}

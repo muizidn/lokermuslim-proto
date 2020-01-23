@@ -1,13 +1,14 @@
 syntax = "proto3";
 
 import "user.proto";
+import "resp_message.proto";
 
 package loker;
 
 service Auth {
   rpc Login(LoginRequest) returns (LoginResponse) {}
-  rpc RegisterPekerja(PekerjaRegisterRequest) returns (RegisterResponse) {}
-  rpc RegisterPerusahaan(PerusahaanRegisterRequest) returns (RegisterResponse) {}
+  rpc RegisterPekerja(PekerjaRegisterRequest) returns (RespMessage) {}
+  rpc RegisterPerusahaan(PerusahaanRegisterRequest) returns (RespMessage) {}
 }
 
 message LoginRequest {
@@ -18,10 +19,6 @@ message LoginRequest {
 message LoginResponse {
   string token = 1;
   User user = 2;
-}
-
-message RegisterResponse {
-  string message = 1;
 }
 
 message PekerjaRegisterRequest {
